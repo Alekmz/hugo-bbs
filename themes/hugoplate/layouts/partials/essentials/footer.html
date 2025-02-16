@@ -1,0 +1,63 @@
+
+   <footer class="w-full flex flex-col bg-[radial-gradient(circle_at_top,theme('colors.primarySoft')_0%,theme('colors.black')_90%),linear-gradient(to_bottom,transparent_20%,theme('colors.black')_100%)]">
+    <div class="flex flex-col gap-10 sm:flex-row w-full items-start py-10">
+
+      <div class="flex flex-col w-full items-center justify-center">
+          <h6 class="font-medium text-sm uppercase">quick links</h6>
+          <ul class="flex flex-col ml-1 items-start text-start">
+            {{ range site.Menus.footer }}
+              <li class="-ml-5 text-start">
+                <a
+                  class="font-primary font-light text-white text-xs"
+                  {{ if findRE `^http` .URL }}
+                    target="_blank" rel="noopener"
+                  {{ end }}
+                  href="{{ if findRE `^#` .URL }}
+                    {{ if not $.IsHome }}
+                      {{ site.Home.RelPermalink }}
+                    {{ end }}{{ .URL }}
+                  {{ else }}
+                    {{ .URL | relLangURL }}
+                  {{ end }}"
+                  >{{ .Name }}</a
+                >
+              </li>
+            {{ end }}
+          </ul>
+      </div>
+      <div class="flex flex-col w-full items-start sm:items-start items-center gap-2">
+        <h6 class="font-medium text-sm uppercase">
+          contact us
+        </h6>
+        <span                   class="font-primary font-light text-white text-xs space-x-1"
+        > <i class="fa-solid text-primary fa-envelope"></i>
+         {{ site.Params.contact_info.email | markdownify }}
+        </span>
+        <span                   class="font-primary font-light text-wrap text-center sm:text-start text-white text-xs space-x-1"
+        >
+        <i class="fa-solid text-primary fa-location-dot"></i>
+        {{ site.Params.contact_info.location | markdownify }}
+        </span>
+        <span                   class="font-primary font-light text-white text-xs space-x-1"
+        >
+        <i class="fa-solid fa-phone text-primary"></i>
+         {{ site.Params.contact_info.phone | markdownify }}
+        </span>
+      </div>
+      <div class="flex w-full justify-center">
+          <!-- navbar brand/logo -->
+          <a
+            class="navbar-brand inline-block"
+            href="{{ site.Home.RelPermalink }}">
+            {{ partial "logo" }}
+          </a>
+      </div>
+    </div>
+  <div class="border-primary dark:border-darkmode-border border-t py-7">
+    <div class="text-white dark:text-darkmode-light container text-center">
+      <p class="font-primary font-light text-sm">
+        {{ site.Params.copyright | markdownify }}
+      </p>
+    </div>
+  </div>
+</footer>

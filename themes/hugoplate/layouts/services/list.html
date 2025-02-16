@@ -1,0 +1,175 @@
+{{ define "main" }}
+  <!-- services -->
+  {{ with .Params.services }}
+    <section
+      class="section pt-14 bg-[radial-gradient(circle_at_top,theme('colors.primarySoft')_5%,theme('colors.black')_50%),linear-gradient(to_bottom,transparent_20%,theme('colors.black')_100%)]">
+      <div class="container w-full">
+        <div class="flex flex-col justify-center text-center w-full">
+          <div
+            class=" w-full flex flex-col items-center justify-center text-center">
+            <h1 class="mb-4 text-h1 lg:text-h1 font-primary font-semibold">
+              {{ .title | markdownify }}
+            </h1>
+            <p class="mb-8">
+              {{ .content | markdownify }}
+            </p>
+          </div>
+          <div class="w-full">
+            {{ partial "image" (dict "Src" .image "Alt" "Banner image" "Loading" "eager" "Class" "mx-auto lg:!max-w-[600px]" "DisplayXL" "800x" ) }}
+          </div>
+        </div>
+      </div>
+    </section>
+  {{ end }}
+
+
+  <!-- /about -->
+
+  <!-- detail -->
+  {{ range $i, $e:= .Params.detail }}
+    <section class="section-sm {{ .background }}">
+      <div class="container">
+        <div class="md:row col items-center gap-10 justify-between">
+          <div
+            class="flex w-full md:flex-row flex-col">
+            <div class="row items-center justify-between">
+            <div class="flex justify-center flex-col md:flex-row md:justify-between">
+              <div class="w-full flex items-center">
+                <h2 class="mb-4 font-primary ">
+                  {{ .title | markdownify }}
+                </h2>
+              </div>
+              <div class="flex w-full px-5">
+                <p class="mb-8 text-lg">
+                  {{ .content | markdownify }}
+                </p>`
+              </div>
+            </div>
+          </div>
+          </div>
+          {{ with .bulletpoints }}
+          <ul class="space-y-2 w-full grid grid-cols-1 md:grid-cols-2 gap-2">
+            {{ range . }}
+              {{ if reflect.IsMap . }}
+              <div class="flex rounded-lg justify-center gap-3 p-10 items-start flex-col bg-gradient-to-l even:bg-gradient-to-r from-primary/20 via-transparent/10 to-[#0E141B]">
+
+
+                <div class="flex gap-2">
+                  {{ partial "icons/icon.html" . }}
+                  <h4 class="text-2xl">
+                    {{ .title }}
+                  </h4>
+                </div>
+
+                <div
+                  class="w-full h-px bg-gradient-to-r from-primary to-transparent"></div>
+                <li>
+                  {{ .description }}
+                </li>
+              </div>
+              {{ else }}
+                <li>{{ . }}</li>
+              {{ end }}
+            {{ end }}
+          </ul>
+        {{ end }}
+        </div>
+      </div>
+    </section>
+  {{ end }}
+  <!-- /detail -->
+
+
+  <!-- list -->
+  {{ range $i, $e:= .Params.list }}
+  <section class="section-sm {{ .background }}">
+    <div class="container">
+      <div class="md:flex-row flex-col gap-10 items-center flex justify-between">
+        <div
+          class="{{ if not (modBool $i 2) }}
+            md:order-1
+          {{ end }} md:col-7 lg:col-6">
+          <h2 class="mb-4 font-primary">
+            {{ .title | markdownify }}
+          </h2>
+
+          {{ with .bulletpoints }}
+            <ul class="space-y-2 ">
+              {{ range . }}
+                {{ if reflect.IsMap . }}
+                <div class="flex gap-3 items-center">
+
+                <i class="fa fa-angle-right text-3xl text-white pl-2"></i>
+
+                  <li>
+
+                    {{ .content }}
+                  </li>
+                </div>
+
+                {{ else }}
+                  <li>{{ . }}</li>
+                {{ end }}
+              {{ end }}
+            </ul>
+          {{ end }}
+          {{ with .button }}
+            {{ if .enable }}
+              <a class="btn btn-primary mt-6" href="{{ .link | absURL }}">
+                {{ .label }}
+              </a>
+            {{ end }}
+          {{ end }}
+        </div>
+        <div
+          class="mb:md-0
+          order-2
+            md:col-5 mb-6">
+          {{ partial "image" (dict "Src" .image "Alt" "feature image" "DisplayXL" "520x" "DisplayLG" "1000x" "DisplayMD" "500x") }}
+        </div>
+      </div>
+    </div>
+  </section>
+  {{ end }}
+  <!-- list -->
+
+
+<!-- call to action -->
+{{ range $i, $e:= .Params.call }}
+<section class="section-sm {{ .background }}">
+  <div class="container">
+    <div class="flex w-full flex-col items-center justify-center text-center rounded-2xl bg-gradient-to-b py-10 from-primary to-black">
+      <div class="flex justify-center flex-col items-center text-center w-full">
+          <h2 class="mb-4 font-primary ">
+            {{ .title | markdownify }}
+          </h2>
+        <div class="flex w-full px-5 justify-center flex-col">
+          <p class="mb-8 text-lg">
+            {{ .description | markdownify }}
+          </p>
+          <div class="">
+            {{ with .button }}
+            {{ if .enable }}
+              <a
+                class="btn btn-primary"
+                href="{{ .link | absURL }}"
+                {{ if strings.HasPrefix .link `http` }}
+                  target="_blank" rel="noopener"
+                {{ end }}>
+                {{ .label }}
+              </a>
+            {{ end }}
+          {{ end }}
+          </div>
+
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+<!--  call to action -->
+
+
+{{ end }}
