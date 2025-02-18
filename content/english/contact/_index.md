@@ -11,11 +11,11 @@ list:
     image: "/images/about.png"
 
     bulletpoints:
-      - title: "Lorem Ipsum"
+      - title: "Localization"
         content: "Lorem Ipsum is simply dummy text of the printing and typesetting"
-      - title: "Lorem Ipsum"
+      - title: "Localization"
         content: "Lorem Ipsum is simply dummy text of the printing and typesetting"
-      - title: "Lorem Ipsum"
+      - title: "Telephone"
         content: "Lorem Ipsum is simply dummy text of the printing and typesetting"
 
 ---

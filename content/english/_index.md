@@ -1,8 +1,8 @@
 ---
 # Banner
 banner:
-  title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit  tempor"
-  content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  title: "Discover the Unique Essence of Our Brand"
+  content: "Here goes the main headline of the website, capturing the essence of our brand and highlighting what makes us unique in the market."
   image: "/images/banner.png"
   button:
     enable: true
@@ -12,13 +12,13 @@ banner:
 # Features
 features:
   - subtitle: "about us"
-    title: "Lorem Ipsum is simply dummy text of the"
+    title: "How We Got Here"
     image: "/images/about.png"
-    content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions."
+    content: "In this section, you will find information related to 'About Us,' including our mission, vision, values, and the story behind our company. Discover who we are and what drives us to offer the best to our customers."
     background: "bg-black"
 
   - subtitle: "our services"
-    title: "Lorem Ipsum is simply dummy text of the"
+    title: "Explore Our Full Suite of Services"
     image: "/images/services.png"
     bulletpoints:
       - title: "Service #01"
@@ -30,6 +30,17 @@ features:
       label: "Check all services"
       link: "/contact"
     background: "bg-gradient-to-r from-black via-primarySoft to-black"
+
+
+call:
+  - title: "Get in Touch with Us!"
+    description: "Our team is here to help you with any inquiries you may have. Contact us today and let’s start a conversation!"
+    background: "bg-gradient-to-r from-black via-primary to-black"
+    button:
+     enable: true
+     label: "Send"
+     link: "/contact"
+
 
 # FAQ (Accordion)
 faq_image: "/images/faq.png" # Caminho da imagem fixa ao lado do accordion

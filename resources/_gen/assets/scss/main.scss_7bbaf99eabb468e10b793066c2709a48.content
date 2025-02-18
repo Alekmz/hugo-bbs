@@ -45,9 +45,9 @@
   main {
     min-height: 70vh; }
   .section {
-    @apply py-24 xl:py-28; }
+    @apply py-24 px-6  xl:py-28; }
     .section-sm {
-      @apply py-16 xl:py-20; }
+      @apply py-16 px-6 xl:py-20; }
   .container {
     @apply mx-auto px-4 2xl:max-w-[1320px]; }
   .form-input {
@@ -136,6 +136,8 @@
     @apply rounded-sm px-4 py-1.5 text-sm; }
   .btn-primary {
     @apply border-primary bg-button rounded-full dark:border-darkmode-primary dark:text-dark text-white dark:bg-darkmode-primary px-10 py-2.5; }
+  .btn-white {
+    @apply border-none bg-white rounded-full text-primary min-w-60 px-10 py-2.5; }
   .btn-outline-primary {
     @apply border-dark text-dark hover:bg-dark dark:hover:text-dark bg-transparent hover:text-white dark:border-darkmode-primary dark:text-white dark:hover:bg-darkmode-primary; }
   .btn-outline-header {

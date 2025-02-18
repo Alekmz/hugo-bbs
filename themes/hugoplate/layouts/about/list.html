@@ -147,7 +147,7 @@
 {{ range $i, $e:= .Params.call }}
 <section class="section-sm {{ .background }}">
   <div class="container">
-    <div class="flex w-full flex-col items-center justify-center text-center rounded-2xl bg-gradient-to-b py-10 from-primary to-black">
+    <div class="flex w-full flex-col items-center md:px-0 px-10 justify-center text-center rounded-2xl bg-gradient-to-b py-10 from-primary to-black">
       <div class="flex justify-center flex-col items-center text-center w-full">
           <h2 class="mb-4 font-primary ">
             {{ .title | markdownify }}
