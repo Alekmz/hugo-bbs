@@ -10,7 +10,7 @@
             <h1 class="mb-4 text-h1 lg:text-h1 font-primary font-semibold">
               {{ .title | markdownify }}
             </h1>
-            <p class="mb-8">
+            <p class="mb-8 max-w-[70%] font-sans">
               {{ .content | markdownify }}
             </p>
           </div>
@@ -40,7 +40,7 @@
                 </h2>
               </div>
               <div class="flex w-full px-5">
-                <p class="mb-8 text-lg">
+                <p class="mb-8 text-lg font-sans">
                   {{ .content | markdownify }}
                 </p>`
               </div>
@@ -48,10 +48,10 @@
           </div>
           </div>
           {{ with .bulletpoints }}
-          <ul class="space-y-2 w-full grid grid-cols-1 md:grid-cols-2 gap-2">
+          <ul class=" w-full grid grid-cols-1 md:grid-cols-2 gap-3  ">
             {{ range . }}
               {{ if reflect.IsMap . }}
-              <div class="flex rounded-lg justify-center gap-3 p-10 items-start flex-col bg-gradient-to-l even:bg-gradient-to-r from-primary/20 via-transparent/10 to-[#0E141B]">
+              <div class="flex hover:scale-[1.03] transition-transform duration-300 rounded-lg min-h-[190px] h-full justify-center gap-3 p-10 items-start flex-col bg-gradient-to-l even:bg-gradient-to-r from-primary/20 via-transparent/10 to-[#0E141B]">
 
 
                 <div class="flex gap-2">
@@ -63,7 +63,7 @@
 
                 <div
                   class="w-full h-px bg-gradient-to-r from-primary to-transparent"></div>
-                <li>
+                <li class="font-sans">
                   {{ .description }}
                 </li>
               </div>
@@ -84,7 +84,7 @@
   {{ range $i, $e:= .Params.list }}
   <section class="section-sm {{ .background }}">
     <div class="container">
-      <div class="md:flex-row flex-col gap-10 items-center flex justify-between">
+      <div class="md:flex-row flex-col-reverse gap-10 items-center flex justify-between">
         <div
           class="{{ if not (modBool $i 2) }}
             md:order-1
@@ -101,7 +101,7 @@
 
                 <i class="fa fa-angle-right text-3xl text-white pl-2"></i>
 
-                  <li>
+                  <li class="font-sans">
 
                     {{ .content }}
                   </li>
@@ -144,7 +144,7 @@
             {{ .title | markdownify }}
           </h2>
         <div class="flex w-full px-5 justify-center flex-col">
-          <p class="mb-8 text-lg">
+          <p class="mb-8 text-lg font-sans">
             {{ .description | markdownify }}
           </p>
           <div class="">

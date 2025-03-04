@@ -2,15 +2,15 @@
   <!-- Banner -->
   {{ with .Params.banner }}
     <section
-      class="section pt-14 bg-[radial-gradient(circle_at_top,theme('colors.primarySoft')_5%,theme('colors.black')_50%),linear-gradient(to_bottom,transparent_20%,theme('colors.black')_100%)]">
-      <div class="container w-full">
-        <div class="flex-col flex md:flex-row justify-center w-full">
+      class="section pt-14 min-h-full bg-[radial-gradient(circle_at_top,theme('colors.primarySoft')_5%,theme('colors.black')_50%),linear-gradient(to_bottom,transparent_20%,theme('colors.black')_100%)]">
+      <div class="container min-h-full flex justify-center w-full">
+        <div class="flex-col flex md:flex-row justify-center min-h-full items-center w-full">
           <div
-            class="md:w-[45%] w-full flex flex-col items-start justify-center text-start">
+            class="md:w-[45%] w-full min-h-[40vh] md:min-h-[65vh] flex flex-col items-start justify-center text-start">
             <h1 class="mb-4 text-h3 lg:text-h1">
               {{ .title | markdownify }}
             </h1>
-            <p class="mb-8">
+            <p class="mb-8 text-lg font-sans">
               {{ .content | markdownify }}
             </p>
 
@@ -59,7 +59,7 @@
             <h2 class="mb-4 font-primary">
               {{ .title | markdownify }}
             </h2>
-            <p class="mb-8 text-lg">
+            <p class="mb-8 text-lg font-sans">
               {{ .content | markdownify }}
             </p>
 
@@ -75,8 +75,8 @@
                     </div>
 
                     <div
-                      class="w-full h-px bg-gradient-to-r from-primary to-transparent"></div>
-                    <li>
+                      class="w-full h-px bg-gradient-to-r from-primary to-transparent" ></div>
+                    <li class="font-sans">
                       {{ .description }}
                     </li>
                   {{ else }}
@@ -102,7 +102,7 @@
   <!-- Testimonials -->
   {{ with site.GetPage "sections/testimonial" }}
     {{ if .Params.enable }}
-      <section class="section bg-black">
+      <section class="section bg-black relative">
         <div class="container">
           <div class="row">
             <div class=" mx-auto mb-12 text-start">
@@ -110,7 +110,7 @@
                 <h2 class="mb-4 w-full text-center md:text-start">
                   {{ .Title | markdownify }}
                 </h2>
-                <div class="flex gap-2">
+                <div class="flex gap-2 w-full right-0 px-10 md:max-w-[20rem] justify-center md:relative absolute bottom-5">
                   <button class="button-prev w-full py-4 px-6 rounded-full bg-[#ACADB115]">
                     <i class="fa text-white fa-arrow-left-long"></i>
                   </button>
@@ -133,18 +133,18 @@
                       <div
                         class="bg-[#ACADB105] dark:bg-darkmode-theme-light rounded-lg px-7 py-10">
                         <div class="">
-                          <h6 class="h5 font-primary font-semibold">
+                          <h3 class="h5 font-primary font-semibold">
                             {{ .name }}
-                          </h6>
-                          <p class="text-[#ACADB1] ">
+                          </h3>
+                          <p class="text-[#ACADB1] font-sans">
                             @{{ .designation | markdownify }}
                           </p>
                         </div>
-                        <blockquote class="mt-8 text-white font-light">
+                        <blockquote class="mt-8 text-white font-light font-sans">
                           {{ .content | markdownify }}
                         </blockquote>
                         <div class="w-full flex justify-between mt-5">
-                          <span class="text-white font-light text-xs">
+                          <span class="text-white font-light text-xs font-sans">
                             {{ .date | markdownify }}
                           </span>
                           <span class="text-white font-light text-xs">
@@ -177,7 +177,7 @@
             <h2 class="mb-4 font-primary ">
               {{ .title | markdownify }}
             </h2>
-            <p class="mb-8 text-lg">
+            <p class="font-sans mb-8 text-lg">
               {{ .description | markdownify }}
             </p>
           </div>
@@ -214,7 +214,7 @@
 
         <div class="flex w-full flex-col md:items-start items-center">
         <span class="subtitle"> Why Choose Us </span>
-        <h2 class="text-3xl font-bold text-center md:text-start mb-6">
+        <h2 class="font-bold text-center md:text-start mb-6">
           Frequently Asked Questions
         </h2>
         <div class="flex w-full">
@@ -223,9 +223,9 @@
               <div class="w-full flex flex-col -ml-7">
                 <button
                   class="w-full flex justify-between items-center px-5 py-4 text-left  focus:outline-none accordion-header">
-                  <span
-                    class="text-sm font-normal font-primary border-b border-[#ffffff15] w-full p-4"
-                    >{{ .question }}</span
+                  <h3
+                    class="text-base font-normal font-primary border-b border-[#ffffff15] w-full p-4"
+                    >{{ .question }}</h3
                   >
                   <i
                     class="icon fa fa-arrow-right pl-2 text-primary transition-transform duration-300"></i>

@@ -7,11 +7,11 @@
 }
 
 .btn-primary {
-  @apply border-primary bg-button rounded-full dark:border-darkmode-primary dark:text-dark text-white dark:bg-darkmode-primary px-10 py-2.5;
+  @apply hover:bg-white hover:scale-110 transition-transform duration-300 hover:text-primary border-primary bg-button rounded-full dark:border-darkmode-primary dark:text-dark text-white dark:bg-darkmode-primary px-10 py-2.5;
 }
 
 .btn-white {
-  @apply border-none bg-white rounded-full text-primary min-w-60 px-10 py-2.5;
+  @apply border-none transition-transform duration-300 hover:scale-110 bg-white rounded-full text-primary min-w-60 px-10 py-2.5;
 }
 
 .btn-outline-primary {
@@ -19,5 +19,5 @@
 }
 
 .btn-outline-header {
-  @apply border-white border-opacity-15 text-primary bg-transparent rounded-full font-normal px-10 py-2.5
+  @apply border-white border-opacity-15 transition-transform duration-300 hover:bg-button hover:text-white hover:scale-110 text-primary bg-transparent rounded-full font-normal px-10 py-2.5
 }

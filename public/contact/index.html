@@ -382,7 +382,7 @@
   <nav class="navbar container">
     
     <div class="order-0">
-      <a class="navbar-brand block" href="/">
+      <a class="navbar-brand block md:scale-100 scale-75" href="/">
         
 
 
@@ -697,87 +697,66 @@
     <main>
       
   <section
-    class="section-sm flex justify-center items-center min-h-screen bg-[radial-gradient(circle_at_top,theme('colors.primarySoft')_5%,theme('colors.black')_50%),linear-gradient(to_bottom,transparent_20%,theme('colors.black')_100%)]">
+    class="section-sm flex justify-center items-center min-h-[700px] bg-[radial-gradient(circle_at_top,theme('colors.primarySoft')_5%,theme('colors.black')_50%),linear-gradient(to_bottom,transparent_20%,theme('colors.black')_100%)]">
     <div class="container">
       <div class="row">
-        <div
-          class="flex -mt-10 gap-10 w-full flex-col md:flex-row items-center justify-center">
+        
+        
+        <div class="flex flex-col md:flex-row gap-10 w-full items-start justify-between">
           
-
-            <div
-              class=" md:col-7 lg:col-6 p-10">
+          
+          <div class="w-full md:w-1/2 text-center md:text-left p-10 order-1 md:order-none">
+            
+            <div>
               <span class="subtitle text-primary/85">
-                get in touch
+                GET IN TOUCH
               </span>
-              <h2 class=" font-primary">
+              <h2 class="font-primary font-bold">
                 Ready to Work
               </h2>
               <h2 class="mb-4 font-primary font-light">
                 Your Next Projects
               </h2>
-
-              
-                <ul class="space-y-2 ">
-                  
-                    
-                    <div class="flex gap-2">
-                      <h4 class="text-2xl">
-                        Localization
-                      </h4>
-                    </div>
-                      <div class="flex gap-3 items-center">
-                        <li>
-                          Lorem Ipsum is simply dummy text of the printing and typesetting
-                        </li>
-                      </div>
-                    
-                  
-                    
-                    <div class="flex gap-2">
-                      <h4 class="text-2xl">
-                        Localization
-                      </h4>
-                    </div>
-                      <div class="flex gap-3 items-center">
-                        <li>
-                          Lorem Ipsum is simply dummy text of the printing and typesetting
-                        </li>
-                      </div>
-                    
-                  
-                    
-                    <div class="flex gap-2">
-                      <h4 class="text-2xl">
-                        Telephone
-                      </h4>
-                    </div>
-                      <div class="flex gap-3 items-center">
-                        <li>
-                          Lorem Ipsum is simply dummy text of the printing and typesetting
-                        </li>
-                      </div>
-                    
-                  
-                </ul>
-              
-
             </div>
+
+            
+            <div class="mt-6 space-y-4 hidden md:block">
+              <div>
+                <h4 class="text-xl font-bold">Localization</h4>
+                <p class="text-gray-400 font-sans">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting.
+                </p>
+              </div>
+              <div>
+                <h4 class="text-xl font-bold">Localization</h4>
+                <p class="text-gray-400 font-sans">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting.
+                </p>
+              </div>
+              <div>
+                <h4 class="text-xl font-bold">Telephone</h4>
+                <p class="text-gray-400 font-sans">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting.
+                </p>
+              </div>
+            </div>
+          </div>
+
           
-          <div class="bg-black/70 rounded-lg text-white p-0 w-full sm:p-8">
-            <h3 class="text-2xl font-bold mb-6 p-6 font-primary">
+          <div class="bg-black/70 rounded-lg text-white p-6 w-full md:w-1/2 order-2 md:order-none">
+            <h3 class="text-2xl font-bold mb-6 font-primary text-center md:text-left">
               Drop Us a Message
             </h3>
-            <div
-              class="w-full h-px bg-gradient-to-r from-primary to-transparent"></div>
+            <div class="w-full h-px bg-gradient-to-r from-primary to-transparent"></div>
             <form
               action="#"
               method="POST"
               class="mt-6">
               
+              
               <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                 <div class="relative">
-                  <span
-                    class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
+                  <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
                     <i class="text-white fa-regular fa-user"></i>
                   </span>
                   <input
@@ -788,8 +767,7 @@
                     class="w-full bg-transparent border-b border-0 font-light border-white border-opacity-15 pl-10 py-3 font-rubik placeholder:text-white focus:outline-none text-white focus:ring-0 focus:border-white transition" />
                 </div>
                 <div class="relative">
-                  <span
-                    class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
+                  <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
                     <i class="fa-regular fa-envelope text-white"></i>
                   </span>
                   <input
@@ -803,8 +781,7 @@
 
               
               <div class="relative mb-6">
-                <span
-                  class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
+                <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
                   <i class="fa-regular fa-message text-white"></i>
                 </span>
                 <input
@@ -816,7 +793,7 @@
               </div>
 
               
-              <div class="relative ">
+              <div class="relative">
                 <span class="absolute left-3 top-5 text-gray-400">
                   <i class="fa-regular fa-envelope text-white"></i>
                 </span>
@@ -832,12 +809,37 @@
               <div class="mt-6">
                 <button
                   type="submit"
-                  class="w-full bg-primary hover:bg-blue-600 text-white font-semibold py-3 rounded-full transition">
-                  Lorem Ipsum
+                  class="w-full btn-primary font-semibold py-3 rounded-full">
+                  Send Message
                 </button>
               </div>
             </form>
           </div>
+
+          
+          <div class="w-full text-center md:hidden order-3 mt-6">
+            <div class="space-y-4">
+              <div>
+                <h4 class="text-xl font-bold">Localization</h4>
+                <p class="text-gray-400">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting.
+                </p>
+              </div>
+              <div>
+                <h4 class="text-xl font-bold">Localization</h4>
+                <p class="text-gray-400">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting.
+                </p>
+              </div>
+              <div>
+                <h4 class="text-xl font-bold">Telephone</h4>
+                <p class="text-gray-400">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting.
+                </p>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -851,60 +853,60 @@
     <div class="flex flex-col gap-10 sm:flex-row w-full items-start py-10">
 
       <div class="flex flex-col w-full items-center justify-center">
-          <h6 class="font-medium text-sm uppercase">quick links</h6>
-          <ul class="flex flex-col ml-1 items-start text-start">
+          <h3 class="font-medium md:text-sm text-lg uppercase">quick links</h3>
+          <ul class="flex flex-col mt-2 ml-1 items-start text-start">
             
-              <li class="-ml-5 text-start">
+              <h4 class="-ml-5 text-start md:text-sm textl-lg font-sans">
                 <a
-                  class="font-primary font-light text-white text-xs"
+                  class="font-primary font-light text-white text-lg md:text-sm"
                   
                   href="
                     /
                   "
                   >Home</a
                 >
-              </li>
+              </h4>
             
-              <li class="-ml-5 text-start">
+              <h4 class="-ml-5 text-start md:text-sm textl-lg font-sans">
                 <a
-                  class="font-primary font-light text-white text-xs"
+                  class="font-primary font-light text-white text-lg md:text-sm"
                   
                   href="
                     /about/
                   "
                   >About Us</a
                 >
-              </li>
+              </h4>
             
-              <li class="-ml-5 text-start">
+              <h4 class="-ml-5 text-start md:text-sm textl-lg font-sans">
                 <a
-                  class="font-primary font-light text-white text-xs"
+                  class="font-primary font-light text-white text-lg md:text-sm"
                   
                   href="
                     /services
                   "
                   >Services</a
                 >
-              </li>
+              </h4>
             
-              <li class="-ml-5 text-start">
+              <h4 class="-ml-5 text-start md:text-sm textl-lg font-sans">
                 <a
-                  class="font-primary font-light text-white text-xs"
+                  class="font-primary font-light text-white text-lg md:text-sm"
                   
                   href="
                     /contact
                   "
                   >Contact Us</a
                 >
-              </li>
+              </h4>
             
           </ul>
       </div>
       <div class="flex flex-col w-full items-start sm:items-start items-center gap-2">
-        <h6 class="font-medium text-sm uppercase">
+        <h3 class="font-medium text-lg md:text-sm uppercase">
           contact us
-        </h6>
-        <span                   class="font-primary font-light text-white text-xs space-x-1"
+        </h3>
+        <h4                   class=" mt-2 font-light text-white text-[14px] font-sans md:text-sm space-x-1"
         > <i class="fa-solid text-primary fa-envelope"></i>
          <a href="mailto:hello@website.com"
 
@@ -914,17 +916,17 @@
 
 
 >hello@website.com</a>
-        </span>
-        <span                   class="font-primary font-light text-wrap text-center sm:text-start text-white text-xs space-x-1"
+        </h4>
+        <h4                   class=" font-light text-wrap text-center sm:text-start text-white text-[14px] font-sans md:text-sm space-x-1"
         >
         <i class="fa-solid text-primary fa-location-dot"></i>
         Lorem Ipsum is simply dummy text of the printing and typesetting
-        </span>
-        <span                   class="font-primary font-light text-white text-xs space-x-1"
+        </h4>
+        <h4                   class=" font-light text-white text-[14px] font-sans md:text-sm space-x-1"
         >
         <i class="fa-solid fa-phone text-primary"></i>
          +99999999999
-        </span>
+        </h4>
       </div>
       <div class="flex w-full justify-center">
           

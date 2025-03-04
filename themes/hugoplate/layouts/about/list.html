@@ -2,7 +2,7 @@
   <!-- about -->
   {{ with .Params.about }}
     <section
-      class="section pt-14 bg-[radial-gradient(circle_at_top,theme('colors.primarySoft')_5%,theme('colors.black')_50%),linear-gradient(to_bottom,transparent_20%,theme('colors.black')_100%)]">
+      class="section pb-0 md:pb-16 pt-14 bg-[radial-gradient(circle_at_top,theme('colors.primarySoft')_5%,theme('colors.black')_50%),linear-gradient(to_bottom,transparent_20%,theme('colors.black')_100%)]">
       <div class="container w-full">
         <div class="flex flex-col justify-center text-center w-full">
           <div
@@ -10,7 +10,7 @@
             <h1 class="mb-4 text-h1 lg:text-h1 font-primary font-semibold">
               {{ .title | markdownify }}
             </h1>
-            <p class="mb-8">
+            <p class="mb-8 max-w-[70%] font-sans">
               {{ .content | markdownify }}
             </p>
           </div>
@@ -40,7 +40,7 @@
             <h2 class="mb-4 font-primary">
               {{ .title | markdownify }}
             </h2>
-            <p class="mb-8 text-lg">
+            <p class="mb-8 text-lg font-sans">
               {{ .content | markdownify }}
             </p>
 
@@ -57,7 +57,7 @@
 
                     <div
                       class="w-full h-px bg-gradient-to-r from-primary to-transparent"></div>
-                    <li>
+                    <li class="font-sans">
                       {{ .description }}
                     </li>
                   {{ else }}
@@ -97,7 +97,7 @@
               </h2>
             </div>
             <div class="flex w-full">
-              <p class="mb-8 text-lg">
+              <p class="mb-8 text-lg font-sans">
                 {{ .content | markdownify }}
               </p>
             </div>
@@ -118,26 +118,83 @@
             {{ .title | markdownify }}
           </h2>
         </div>
-        <div class="flex w-full px-5">
-          <p class="mb-8 text-lg">
+        <div class="flex w-full md:px-5">
+          <p class="mb-8 text-lg font-sans">
             {{ .description | markdownify }}
           </p>
         </div>
       </div>
     </div>
     <div class="flex w-full flex-col space-y-2 p-1">
-      <div class="flex w-full md:flex-row flex-col gap-2">
-        {{ partial "image" (dict "Src" .image_1 "Alt" "About image 1" "Loading" "eager") }}
-        {{ partial "image" (dict "Src" .image_2 "Alt" "About image 2" "Loading" "eager") }}
-        {{ partial "image" (dict "Src" .image_3 "Alt" "About image 3" "Loading" "eager") }}
-      </div>
-      <div class="flex w-full md:flex-row flex-col gap-2">
-        {{ partial "image" (dict "Src" .image_4 "Alt" "About image 4" "Loading" "eager") }}
-        {{ partial "image" (dict "Src" .image_5 "Alt" "About image 5" "Loading" "eager") }}
-        {{ partial "image" (dict "Src" .image_6 "Alt" "About image 6" "Loading" "eager") }}
-      </div>
 
-    </div>
+      {{/* Grid para desktop */}}
+      <div class="hidden md:grid grid-cols-3 gap-2">
+          <div class="overflow-hidden transition-transform duration-300 hover:scale-[1.03]">
+              {{ partial "image" (dict "Src" .image_1 "Alt" "About image 1" "Loading" "eager") }}
+          </div>
+          <div class="overflow-hidden transition-transform duration-300 hover:scale-[1.03]">
+              {{ partial "image" (dict "Src" .image_2 "Alt" "About image 2" "Loading" "eager") }}
+          </div>
+          <div class="overflow-hidden transition-transform duration-300 hover:scale-[1.03]">
+              {{ partial "image" (dict "Src" .image_3 "Alt" "About image 3" "Loading" "eager") }}
+          </div>
+      </div>
+  
+      {{/* Slider para mobile */}}
+      <div class="md:hidden">
+          <div class="swiper mySwiper">
+              <div class="swiper-wrapper">
+                  <div class="swiper-slide flex justify-center">
+                      {{ partial "image" (dict "Src" .image_1 "Alt" "About image 1" "Loading" "eager") }}
+                  </div>
+                  <div class="swiper-slide flex justify-center">
+                      {{ partial "image" (dict "Src" .image_2 "Alt" "About image 2" "Loading" "eager") }}
+                  </div>
+                  <div class="swiper-slide flex justify-center">
+                      {{ partial "image" (dict "Src" .image_3 "Alt" "About image 3" "Loading" "eager") }}
+                  </div>
+              </div>
+  
+              {{/* Paginação e Botões de Navegação */}}
+              <div class="swiper-pagination"></div>
+
+          </div>
+      </div>
+  
+      {{/* Segunda linha */}}
+      <div class="hidden md:grid grid-cols-3 gap-2">
+          <div class="overflow-hidden transition-transform duration-300 hover:scale-[1.03]">
+              {{ partial "image" (dict "Src" .image_4 "Alt" "About image 4" "Loading" "eager") }}
+          </div>
+          <div class="overflow-hidden transition-transform duration-300 hover:scale-[1.03]">
+              {{ partial "image" (dict "Src" .image_5 "Alt" "About image 5" "Loading" "eager") }}
+          </div>
+          <div class="overflow-hidden transition-transform duration-300 hover:scale-[1.03]">
+              {{ partial "image" (dict "Src" .image_6 "Alt" "About image 6" "Loading" "eager") }}
+          </div>
+      </div>
+  
+      <div class="md:hidden">
+          <div class="swiper mySwiper">
+              <div class="swiper-wrapper">
+                  <div class="swiper-slide flex justify-center">
+                      {{ partial "image" (dict "Src" .image_4 "Alt" "About image 4" "Loading" "eager") }}
+                  </div>
+                  <div class="swiper-slide flex justify-center">
+                      {{ partial "image" (dict "Src" .image_5 "Alt" "About image 5" "Loading" "eager") }}
+                  </div>
+                  <div class="swiper-slide flex justify-center">
+                      {{ partial "image" (dict "Src" .image_6 "Alt" "About image 6" "Loading" "eager") }}
+                  </div>
+              </div>
+  
+              {{/* Paginação e Botões de Navegação */}}
+              <div class="swiper-pagination"></div>
+             
+          </div>
+      </div>
+  
+  </div>
   </div>
 </section>
 {{ end }}
@@ -153,7 +210,7 @@
             {{ .title | markdownify }}
           </h2>
         <div class="flex w-full px-5 justify-center flex-col">
-          <p class="mb-8 text-lg">
+          <p class="mb-8 text-lg font-sans">
             {{ .description | markdownify }}
           </p>
           <div class="">
@@ -179,6 +236,26 @@
 </section>
 {{ end }}
 <!--  call to action -->
-
-
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+      new Swiper('.mySwiper', {
+          loop: true,
+          centeredSlides: true,
+          pagination: {
+              el: '.swiper-pagination',
+              clickable: true,
+          },
+          navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+          },
+          autoplay: {
+              delay: 3000,
+              disableOnInteraction: false,
+          },
+          slidesPerView: 1,
+          spaceBetween: 20,
+      });
+  });
+  </script>
 {{ end }}

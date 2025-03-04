@@ -45,7 +45,9 @@
       "primary_type": "sans-serif",
       "secondary": "Signika:wght@500;700",
       "secondary_type": "sans-serif",
-      "rubik": "Rubik:wght@100..800"
+      "rubik": "Rubik:wght@100..800",
+      "sans": "Source+Sans:wght@100..800"
+
     },
     "font_size": {
       "base": "16",
