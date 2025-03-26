@@ -2,9 +2,9 @@
    <footer class="w-full flex flex-col bg-[radial-gradient(circle_at_top,theme('colors.primarySoft')_0%,theme('colors.black')_90%),linear-gradient(to_bottom,transparent_20%,theme('colors.black')_100%)]">
     <div class="flex flex-col gap-10 sm:flex-row w-full items-start py-10">
 
-      <div class="flex flex-col w-full items-center justify-center">
+      <div class="flex flex-col w-full md:items-center md:justify-center px-8 md:px-0">
           <h3 class="font-medium md:text-sm text-lg uppercase">quick links</h3>
-          <ul class="flex flex-col mt-2 ml-1 items-start text-start">
+          <ul class="flex flex-col mt-2 md:ml-1  ml-5 items-start text-start">
             {{ range site.Menus.footer }}
               <h4 class="-ml-5 text-start md:text-sm textl-lg font-sans">
                 <a
@@ -25,7 +25,7 @@
             {{ end }}
           </ul>
       </div>
-      <div class="flex flex-col w-full items-start sm:items-start items-center gap-2">
+      <div class="flex flex-col w-full items-start sm:items-start md:items-center ml-8 md:ml-0 gap-4">
         <h3 class="font-medium text-lg md:text-sm uppercase">
           contact us
         </h3>
@@ -33,7 +33,7 @@
         > <i class="fa-solid text-primary fa-envelope"></i>
          {{ site.Params.contact_info.email | markdownify }}
         </h4>
-        <h4                   class=" font-light text-wrap text-center sm:text-start text-white text-[14px] font-sans md:text-sm space-x-1"
+        <h4                   class=" font-light text-wrap md:text-center text-white text-[14px] font-sans md:text-sm space-x-1"
         >
         <i class="fa-solid text-primary fa-location-dot"></i>
         {{ site.Params.contact_info.location | markdownify }}
@@ -44,7 +44,7 @@
          {{ site.Params.contact_info.phone | markdownify }}
         </h4>
       </div>
-      <div class="flex w-full justify-center">
+      <div class="flex w-full md:justify-center ml-8 md:ml-0">
           <!-- navbar brand/logo -->
           <a
             class="navbar-brand inline-block"

@@ -2,7 +2,7 @@
   <!-- services -->
   {{ with .Params.services }}
     <section
-      class="section pt-14 bg-[radial-gradient(circle_at_top,theme('colors.primarySoft')_5%,theme('colors.black')_50%),linear-gradient(to_bottom,transparent_20%,theme('colors.black')_100%)]">
+      class="section pt-14 min-h-[450px] items-center justify-center flex bg-[radial-gradient(circle_at_top,theme('colors.primarySoft')_5%,theme('colors.black')_50%),linear-gradient(to_bottom,transparent_20%,theme('colors.black')_100%)]">
       <div class="container w-full">
         <div class="flex flex-col justify-center text-center w-full">
           <div
@@ -14,9 +14,7 @@
               {{ .content | markdownify }}
             </p>
           </div>
-          <div class="w-full">
-            {{ partial "image" (dict "Src" .image "Alt" "Banner image" "Loading" "eager" "Class" "mx-auto lg:!max-w-[600px]" "DisplayXL" "800x" ) }}
-          </div>
+
         </div>
       </div>
     </section>
@@ -39,7 +37,7 @@
                   {{ .title | markdownify }}
                 </h2>
               </div>
-              <div class="flex w-full px-5">
+              <div class="flex w-full">
                 <p class="mb-8 text-lg font-sans">
                   {{ .content | markdownify }}
                 </p>`
